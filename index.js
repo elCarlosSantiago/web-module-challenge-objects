@@ -102,7 +102,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays dog'
+reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays'
 
 console.log('task5', reviews)
 
@@ -155,15 +155,23 @@ Use the getReviewsByRating function below to do the following:
   For example: getReviewByRating(reviews, 4) would return these reviews in the 4 range (4-4.9):
   [
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]
 */
 
-function getReviewByRating( /* code here */ ) {
-    /* code here */
+
+function getReviewByRating(arr, rate) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].rating.toString().includes(rate)) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
 }
 
+console.log('stretch1', getReviewByRating(reviews, 3))
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -178,10 +186,18 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews( /* code here */ ) {
-    /* code here */
+
+function getLongReviews(arr) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].feedback.split(' ').length > 15) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
 }
 
+console.log('Stretch 2', getLongReviews(reviews))
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -199,6 +215,11 @@ Use the carMaker function below to do the following:
   Then we called car1.drive(100)
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
+
+
+
+
+
 
 
 function carMaker( /* code here */ ) {

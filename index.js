@@ -219,14 +219,20 @@ Use the carMaker function below to do the following:
 
 
 
-
-
-
-function carMaker( /* code here */ ) {
-    /* code here */
-
+function carMaker(miles) {
+    const carlos = {
+        odometer: miles,
+        drive: function(distance) {
+            this.odometer = this.odometer + distance;
+            return this.odometer;
+        }
+    }
+    return carlos;
 }
 
+let car1 = carMaker(10);
+console.log(car1);
+console.log('stretch3', car1.drive(100));
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo() {
